@@ -1,0 +1,81 @@
+/* Global styles */
+
+:local(.styles) {
+  &.panel {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  & .routeTransition-enter {
+    opacity: 0.01;
+    transition: opacity .5s ease-in;
+  }
+
+  & .routeTransition-enter.routeTransition-enter-active {
+    opacity: 1;
+  }
+
+  & .routeTransition-leave {
+    display: none;
+  }
+
+  & .routeTransition-leave.routeTransition-leave-active {
+  }
+}
+
+:global {
+  @media (max-width: 858px) {
+    #root {
+      p {
+        font-size: 21px;
+      }
+      h1 {
+        font-size: 36px;
+      }
+    }
+  }
+
+  @media (max-width: 780px) {
+    #root {
+      p {
+        font-size: 18px;
+      }
+      h1 {
+        font-size: 32px;
+      }
+    }
+  }
+
+  @media (max-width: 702px) {
+    #root {
+      p {
+        font-size: 16px;
+      }
+      h1 {
+        font-size: 28px;
+      }
+    }
+  }
+
+  @media (max-width: 724px) {
+    #root {
+      p {
+        font-size: 15px;
+      }
+      h1 {
+        font-size: 24px;
+      }
+    }
+  }
+
+  @media (max-width: 623px) {
+    #root {
+      p {
+        font-size: 14px;
+      }
+      h1 {
+        font-size: 20px;
+      }
+    }
+  } 
+}

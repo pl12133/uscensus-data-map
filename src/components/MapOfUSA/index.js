@@ -5,6 +5,7 @@ import { PageHeader, Button } from 'react-bootstrap';
 import InlineSVG from 'svg-inline-react';
 
 import rawSVGMap from '../../assets/Blank_US_Map.svg';
+import StateOverlay from '../../components/StateOverlay/';
 
 const US_STATES_SELECTOR = '.svg-container g > path';
 
@@ -24,7 +25,7 @@ class MapOfUSA extends Component {
 
 	constructor () {
 		super();
-		this.state = { states: [] };
+		this.state = { states: [], overlayState: 'Pick a state' };
 	}
 	componentDidMount () {
 		const states = [].slice.call(document.querySelectorAll(US_STATES_SELECTOR))
@@ -36,9 +37,9 @@ class MapOfUSA extends Component {
 		const { props } = this;
 		let eventHandlers = { ...props };
 
-		eventHandlers.onClick = eventHandlers.onClick || function (e) {
-			alert('You Clicked ' + e.target.getAttribute('id'));
-		};
+		eventHandlers.onClick = eventHandlers.onClick || ((e) => {
+			this.setState({ overlayState: e.target.getAttribute('id') });
+		});
 		eventHandlers.onMouseEnter = eventHandlers.onMouseEnter || function (e) {
 			e.target.style.fill = 'green';
 		};
@@ -67,9 +68,12 @@ class MapOfUSA extends Component {
 	}
 
 	render () {
+		const { overlayState } = this.state;
 		return (
 			<div className='svg-container' style={ { width: '80%', margin: '0 auto' } }>
 				<InlineSVG src={rawSVGMap}/>
+				<StateOverlay stateCode={overlayState}/>
+
 			</div>
 		);
 	}

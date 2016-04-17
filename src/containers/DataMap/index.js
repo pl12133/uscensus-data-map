@@ -4,9 +4,6 @@ import React, { Component, PropTypes } from 'react';
 import { PageHeader, Button } from 'react-bootstrap';
 import MapOfUSA from '../../components/MapOfUSA/';
 
-import StateOverlay from '../../components/StateOverlay/';
-
-
 const DataMap = () => {
 	return (
 		<div>
@@ -14,7 +11,6 @@ const DataMap = () => {
 				{'A map of the USA and Census Data'}
 			</PageHeader>
 			<MapOfUSA />
-			<StateOverlay />
 		</div>
 	);
 }

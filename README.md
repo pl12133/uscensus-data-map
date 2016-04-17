@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # What is it
 
 JavaScript single page application boilerplate I use in personal projects. Intended to have a page with a basic Bootstrap layout and routing, with tests and linting all set up. This branch includes React (with Hot Reloading enabled), react-router, and react-bootstrap. With this project you will have a basic Bootstrap page with a navigation bar, ready to develop your single page application.
@@ -45,3 +46,7 @@ To begin development, define the environment variables HOST and PORT. Execute `n
 To build for production, use `npm run build:prod` and the output will build in the `lib` folder. There is a basic express server for production to serve up a single page app, start it with `npm run start:prod`.
 
 *Make sure your `index.html` file includes `dist/bundle.js` for development, and `lib/bundle.js` for production.*
+=======
+# uscensus-data-map
+An interactive map of the USA with US Census data
+>>>>>>> b97b75fb48a4e487de258c6f86f0acc1e7f9096a

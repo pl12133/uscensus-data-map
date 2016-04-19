@@ -11,7 +11,7 @@ const WelcomeJumbo = () => (
   <Jumbotron className={styles}>
     <h1>Welcome</h1>
     <p>
-      {'Begin building your beautiful website today'}
+      {'See what you can do using the US Census API and CitySDK'}
     </p>
     <LinkContainer to={ { pathname: '/about/' } }>
       <Button bsStyle='primary'>

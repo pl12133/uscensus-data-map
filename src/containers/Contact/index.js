@@ -4,13 +4,16 @@ import React, { Component, PropTypes } from 'react';
 
 import { PageHeader, Grid, Row, Col, Well } from 'react-bootstrap';
 
-const ContactItem = ({contactType, contactInfo}) => (
+const ContactItem = ({contactType, contactInfo, contactURL}) => (
   <Row>
     <Col xs={12}>
       <span style={ { fontWeight: 'bold' } }>
-        {`${contactType}:`}
+        {`${contactType}: `}
       </span>
-      <span>{contactInfo}</span>
+      {contactURL
+				? <a href={contactURL}>{contactInfo}</a>
+				: <span>{contactInfo}</span>
+			}
     </Col>
   </Row>
 );
@@ -26,12 +29,13 @@ const Contact = () => (
           {'Here are a few ways to get in touch'}
         </Row>
         <ContactItem
-          contactType='Phone'
-          contactInfo='(234) 567-8910'
+          contactType='Email'
+          contactInfo='pl12133@gmail.com'
         />
         <ContactItem
-          contactType='Email'
-          contactInfo='you@email.com'
+          contactType='Github'
+          contactInfo='@pl12133'
+					contactURL='https://github.com/pl12133'
         />
       </Grid>
     </Well>

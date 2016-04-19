@@ -5,7 +5,6 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 import HomePage from 'containers/HomePage/';
 import About from 'containers/About/';
-import Contact from 'containers/Contact/';
 import Page404 from 'containers/Page404/';
 import DataMap from 'containers/DataMap';
 
@@ -16,7 +15,6 @@ const Routes = () => (
     <Route path='/' component={App}>
       <IndexRoute component={HomePage} />
       <Route path='about' component={About} />
-      <Route path='contact' component={Contact} />
       <Route path='map' component={DataMap} />
       <Route path='*' component={Page404} />
     </Route>

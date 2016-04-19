@@ -1,0 +1,33 @@
+:local(.styles) {
+	position: absolute;
+	top: 35%;
+	left: 50%;
+	max-height: 80%;
+	transform: translate(-50%, -50%);
+	overflow-y: scroll;
+	border: 2px lightblue;
+	background: white;
+
+	& {
+		width: 90%;
+		// extra-small
+	}
+	@media (min-width: 768px) {
+		& {
+			width: 80%;
+			// small 
+		}
+	}
+	@media (min-width: 992px) {
+		& {
+			width: 70%;
+			// medium
+		}
+	}
+	@media (min-width: 1200px) { 
+		& {
+			width: 60%;
+			// large
+		}
+	}
+}

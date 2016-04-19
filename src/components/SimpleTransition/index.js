@@ -13,7 +13,7 @@ class SimpleTransition extends Component {
 
     // Setup animations
     let [{ animations }] = args;
-    let animationObjs = animations.map(animation => this.makeAnimationObject(...animation.split(' ')));
+    let animationObjs = animations.map((animation) => this.makeAnimationObject(...animation.split(' ')));
     this.animationStyles = this.blendAnimationObjects(...animationObjs);
 
     // Setup hooks
@@ -29,7 +29,7 @@ class SimpleTransition extends Component {
     this.toggle();
   }
 
-  blendAnimationObjects(...animations) {
+  blendAnimationObjects (...animations) {
     return animations.reduce((memo, current) => {
       memo = {
         initial: { ...memo.initial, ...current.initial },
@@ -38,24 +38,24 @@ class SimpleTransition extends Component {
         transition: (memo.transition)
           ? `${memo.transition}, ${current.transition}`
           : `${current.transition}`
-      }
+      };
       return memo;
     }, {});
   }
-  makeAnimationObject(style = 'noStyle', initial = {}, enter = {}, exit = {}, transition = 'linear') {
+  makeAnimationObject (style = 'noStyle', initial = {}, enter = {}, exit = {}, transition = 'linear') {
     let { timeout } = this.props;
     return {
-      initial: { [style] : initial },
-      enter: { [style] : enter },
+      initial: { [style]: initial },
+      enter: { [style]: enter },
       exit: { [style]: exit },
       transition: `${style} ${timeout}ms ${transition}`
-    }
+    };
   }
-  applyStylesToNode(styles) {
-    let nodeMutator = (node) => { // Name anonymous functions during development
-      Object.keys(styles).forEach(key => node.style[key] = styles[key]);
+  applyStylesToNode (styles) {
+    const nodeMutator = (node) => { // Name anonymous functions during development
+      Object.keys(styles).forEach((key) => { node.style[key] = styles[key]; });
       return node;
-    }
+    };
     return nodeMutator;
   }
   render () {
@@ -78,6 +78,6 @@ class SimpleTransition extends Component {
 SimpleTransition.propTypes = {
   animations: PropTypes.array.isRequired,
   timeout: PropTypes.number
-}
+};
 
 export default SimpleTransition;

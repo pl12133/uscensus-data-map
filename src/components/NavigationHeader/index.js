@@ -34,11 +34,8 @@ class NavigationHeader extends Component {
             <LinkContainer to={ { pathname: '/about' } }>
               <NavItem eventKey={3}>{'About'}</NavItem>
             </LinkContainer>
-            <LinkContainer to={ { pathname: '/contact' } }>
-              <NavItem eventKey={4}>{'Contact'}</NavItem>
-            </LinkContainer>
             <LinkContainer to={ { pathname: '/map' } }>
-              <NavItem eventKey={5}>{'Data Map'}</NavItem>
+              <NavItem eventKey={4}>{'Data Map'}</NavItem>
             </LinkContainer>
           </Nav>
         </Navbar.Collapse>

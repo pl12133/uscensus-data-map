@@ -9,7 +9,7 @@ import styles from './styles/';
 
 const App = ({children, location}) => (
   <div>
-    <NavigationHeader brand={'Your Brand Here'} fixedTop/>
+    <NavigationHeader brand={'Census Data Demo'} fixedTop/>
     <Panel className={styles}>
       <ReactCSSTransitionGroup
         transitionName='routeTransition'

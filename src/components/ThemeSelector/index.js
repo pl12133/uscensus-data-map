@@ -32,7 +32,6 @@ class ThemeSelector extends Component {
             ...json.themes
           ]
         });
-        console.log('Got:', json);
       }, error);
   }
 
